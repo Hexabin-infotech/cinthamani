@@ -1,0 +1,29 @@
+# Reference repos (cloned for design / tooling only — not part of this project)
+awesome-design-md/
+geo-seo-claude/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Claude / tooling caches
+.claude/
+
+# Temp
+*.tmp
+tmp/

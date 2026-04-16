@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+/* === Cinthamani Design Tokens (Apple-Inspired + Trust & Authority) === */
+
+:root {
+  /* Colors */
+  --color-black: #000000;
+  --color-near-black: #1d1d1f;
+  --color-light-gray: #f5f5f7;
+  --color-white: #ffffff;
+  --color-cta: #CA8A04;
+  --color-cta-hover: #a16207;
+  --color-interactive: #0071e3;
+  --color-link: #0066cc;
+  --color-link-dark: #2997ff;
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: rgba(0, 0, 0, 0.8);
+  --color-text-tertiary: rgba(0, 0, 0, 0.48);
+  --color-dark-surface-1: #272729;
+  --color-dark-surface-2: #1c1c1e;
+  --color-overlay: rgba(210, 210, 215, 0.64);
+
+  /* Shadows */
+  --shadow-card: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Radius */
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 980px;
+
+  /* Font */
+  --font-display: 'Lexend', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Source Sans 3', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-near-black);
+  --color-cta: var(--color-cta);
+  --color-interactive: var(--color-interactive);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+/* === Base Styles === */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-white);
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Typography === */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.28px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.07; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.1; }
+h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.14; letter-spacing: 0.196px; font-weight: 400; }
+h4 { font-size: 1.31rem; line-height: 1.19; letter-spacing: 0.231px; }
+
+p {
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+}
+
+a {
+  transition: color 200ms ease;
+}
+
+/* === Apple Glass Navigation === */
+
+.nav-glass {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* === Section Rhythm (dark/light alternating) === */
+
+.section-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.section-light {
+  background: var(--color-light-gray);
+  color: var(--color-near-black);
+}
+
+.section-white {
+  background: var(--color-white);
+  color: var(--color-near-black);
+}
+
+/* === Buttons === */
+
+.btn-primary {
+  background: var(--color-cta);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 17px;
+  font-family: var(--font-body);
+  transition: all 200ms ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--color-cta-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--color-near-black);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 400;
+  font-size: 17px;
+  font-family: var(--font-body);
+  transition: all 200ms ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.btn-pill {
+  background: transparent;
+  color: var(--color-link);
+  border: 1px solid var(--color-link);
+  border-radius: var(--radius-pill);
+  padding: 8px 20px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.btn-pill:hover {
+  background: var(--color-link);
+  color: white;
+}
+
+.section-dark .btn-pill {
+  color: var(--color-link-dark);
+  border-color: var(--color-link-dark);
+}
+.section-dark .btn-pill:hover {
+  background: var(--color-link-dark);
+  color: var(--color-black);
+}
+
+/* === Cards === */
+
+.card {
+  background: var(--color-light-gray);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  border: none;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+/* === Container === */
+
+.container-narrow {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* === Focus States === */
+
+*:focus-visible {
+  outline: 2px solid var(--color-interactive);
+  outline-offset: 2px;
+}
+
+/* === Reduced Motion === */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Scrollbar === */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* === WhatsApp Widget === */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 200ms ease;
+  cursor: pointer;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
