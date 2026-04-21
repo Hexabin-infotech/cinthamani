@@ -64,28 +64,26 @@ export default function Navbar() {
 
   return (
     <nav
-      className="nav-glass fixed top-0 left-0 right-0 z-50"
+      className="nav-glass sticky top-0 z-50"
       role="navigation"
       aria-label="Main navigation"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-12 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 cursor-pointer shrink-0"
+            className="flex items-center cursor-pointer shrink-0"
+            aria-label="Cinthamani Computers — Home"
           >
             <Image
               src="/logo.png"
               alt="Cinthamani Computers"
-              width={36}
-              height={36}
-              className="h-8 w-auto"
+              width={720}
+              height={180}
+              className="h-9 w-auto sm:h-10 brightness-0 invert"
               priority
             />
-            <span className="font-[family-name:var(--font-display)] text-base font-semibold text-white hidden sm:inline">
-              Cinthamani
-            </span>
           </Link>
 
           {/* Desktop navigation */}
@@ -95,13 +93,13 @@ export default function Navbar() {
                 <div key={link.href} className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setSolutionsOpen(!solutionsOpen)}
-                    className="flex items-center gap-1 px-3 py-1.5 text-xs font-normal text-white/80 transition-colors hover:text-white cursor-pointer"
+                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white/90 transition-colors hover:text-white cursor-pointer"
                     aria-expanded={solutionsOpen}
                     aria-haspopup="true"
                   >
                     {link.label}
                     <ChevronDown
-                      size={12}
+                      size={14}
                       className={`transition-transform duration-200 ${
                         solutionsOpen ? "rotate-180" : ""
                       }`}
@@ -110,7 +108,7 @@ export default function Navbar() {
 
                   {/* Dropdown menu */}
                   {solutionsOpen && (
-                    <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 min-w-[220px] rounded-xl bg-[#1d1d1f]/95 py-2 shadow-lg backdrop-blur-xl border border-white/10">
+                    <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 min-w-[240px] rounded-xl bg-[#1010c8]/95 py-2 shadow-xl backdrop-blur-xl border border-white/10">
                       {solutionLinks.map((solution) => (
                         <Link
                           key={solution.href}
@@ -128,10 +126,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-1.5 text-xs font-normal transition-colors cursor-pointer ${
+                  className={`px-3 py-2 text-sm font-medium transition-colors cursor-pointer ${
                     pathname === link.href
                       ? "text-white"
-                      : "text-white/80 hover:text-white"
+                      : "text-white/90 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -144,7 +142,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="btn-primary cursor-pointer !px-4 !py-1.5 !text-xs !rounded-[var(--radius-pill)]"
+              className="btn-primary cursor-pointer !px-5 !py-2 !text-sm !rounded-[var(--radius-pill)] ml-2"
             >
               Get a Quote
             </Link>
@@ -164,7 +162,7 @@ export default function Navbar() {
 
       {/* Mobile overlay menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-12 z-40 bg-black/95 backdrop-blur-xl lg:hidden overflow-y-auto">
+        <div className="fixed left-0 right-0 bottom-0 top-16 z-40 bg-[#1a1af0]/98 backdrop-blur-xl lg:hidden overflow-y-auto">
           <div className="flex flex-col px-6 py-8">
             {navLinks.map((link) =>
               link.hasDropdown ? (

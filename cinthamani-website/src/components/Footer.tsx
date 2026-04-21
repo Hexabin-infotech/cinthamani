@@ -21,7 +21,10 @@ const solutions = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1d1d1f] text-white/80">
+    <footer className="relative bg-[var(--color-brand-blue-dark)] text-white/80">
+      {/* Gold accent hairline at top for separation */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[var(--color-cta)]/40 to-transparent" aria-hidden="true" />
+
       {/* Main footer grid */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
@@ -29,20 +32,18 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 cursor-pointer"
+              className="inline-flex items-center cursor-pointer"
+              aria-label="Cinthamani Computers — Home"
             >
               <Image
                 src="/logo.png"
                 alt="Cinthamani Computers"
-                width={40}
-                height={40}
-                className="h-9 w-auto"
+                width={720}
+                height={180}
+                className="h-10 w-auto brightness-0 invert"
               />
-              <span className="font-[family-name:var(--font-display)] text-xl font-semibold text-white">
-                Cinthamani
-              </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-white/60">
+            <p className="mt-4 text-sm leading-relaxed text-white/70">
               Cinthamani Computers Pvt. Ltd. — Trusted broadcast and IT
               solutions partner since 1984. Four decades of innovation,
               serving broadcasters, studios, and enterprises across India.
@@ -59,7 +60,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 transition-colors hover:text-white cursor-pointer"
+                    className="text-sm text-white/75 transition-colors hover:text-white hover:translate-x-0.5 inline-block cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -78,7 +79,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 transition-colors hover:text-white cursor-pointer"
+                    className="text-sm text-white/75 transition-colors hover:text-white hover:translate-x-0.5 inline-block cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -96,9 +97,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin
                   size={18}
-                  className="mt-0.5 shrink-0 text-white/40"
+                  className="mt-0.5 shrink-0 text-[var(--color-cta)]"
                 />
-                <span className="text-sm leading-relaxed text-white/60">
+                <span className="text-sm leading-relaxed text-white/75">
                   48, Rajabhadar Street,
                   <br />
                   T. Nagar, Chennai 600017
@@ -107,18 +108,18 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+914428153842"
-                  className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white cursor-pointer"
+                  className="flex items-center gap-3 text-sm text-white/75 transition-colors hover:text-white cursor-pointer"
                 >
-                  <Phone size={18} className="shrink-0 text-white/40" />
+                  <Phone size={18} className="shrink-0 text-[var(--color-cta)]" />
                   +91 44 2815 3842
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:sales@cinthamani.com"
-                  className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white cursor-pointer"
+                  className="flex items-center gap-3 text-sm text-white/75 transition-colors hover:text-white cursor-pointer"
                 >
-                  <Mail size={18} className="shrink-0 text-white/40" />
+                  <Mail size={18} className="shrink-0 text-[var(--color-cta)]" />
                   sales@cinthamani.com
                 </a>
               </li>
@@ -127,24 +128,24 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      {/* Bottom bar — slightly darker shade of brand blue */}
+      <div className="border-t border-white/10 bg-black/25">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-white/60">
               &copy; {new Date().getFullYear()} Cinthamani Computers Pvt. Ltd.
               All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link
                 href="/privacy"
-                className="text-xs text-white/40 transition-colors hover:text-white cursor-pointer"
+                className="text-xs text-white/60 transition-colors hover:text-white cursor-pointer"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-xs text-white/40 transition-colors hover:text-white cursor-pointer"
+                className="text-xs text-white/60 transition-colors hover:text-white cursor-pointer"
               >
                 Terms of Service
               </Link>
