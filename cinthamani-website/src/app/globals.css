@@ -317,6 +317,93 @@ a {
   .preloader-logo { animation: none; }
 }
 
+/* === Partner logo treatment in marquee — clean white silhouettes on dark bg === */
+
+.partner-logo {
+  filter: invert(1) grayscale(1);
+  opacity: 0.65;
+  transition: filter 300ms ease, opacity 300ms ease;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.group:hover .partner-logo {
+  filter: none;
+  opacity: 1;
+}
+
+/* === Hero Buttons (NovaCrest-inspired: white primary + gradient secondary) === */
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--color-near-black);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all 200ms ease;
+  border: none;
+  text-decoration: none;
+}
+.hero-btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 240, 0.25) 0%,
+    rgba(202, 138, 4, 0.20) 100%
+  );
+  border: 1px solid rgba(202, 138, 4, 0.45);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  transition: all 200ms ease;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+.hero-btn-secondary:hover {
+  border-color: rgba(202, 138, 4, 0.85);
+  transform: translateY(-1px);
+}
+
+/* === Hero Floating Stat Cards Animation === */
+
+@keyframes hero-stat-float {
+  0%, 100% { transform: var(--card-rotate, rotate(0deg)) translateY(0); }
+  50%      { transform: var(--card-rotate, rotate(0deg)) translateY(-8px); }
+}
+
+.hero-stat-card {
+  animation: hero-stat-float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-stat-card.-rotate-\[3deg\] { --card-rotate: rotate(-3deg); }
+.hero-stat-card.-rotate-\[5deg\] { --card-rotate: rotate(-5deg); }
+.hero-stat-card.-rotate-\[8deg\] { --card-rotate: rotate(-8deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stat-card { animation: none; }
+}
+
 /* === Marquee Animation (for client logo carousel) === */
 
 @keyframes marquee {

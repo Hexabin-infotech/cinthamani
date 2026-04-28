@@ -27,3 +27,9 @@ Thumbs.db
 # Temp
 *.tmp
 tmp/
+
+# Playwright MCP screenshots and traces
+.playwright-mcp/
+*.png
+!cinthamani-website/public/**/*.png
+!awesome-design-md/**/*.png

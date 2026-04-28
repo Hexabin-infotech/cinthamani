@@ -56,15 +56,15 @@ export default function ClientLogosMarquee() {
           {[...partners, ...partners].map((partner, idx) => (
             <div
               key={`${partner.name}-${idx}`}
-              className="flex h-16 w-28 shrink-0 items-center justify-center rounded-lg bg-white/95 px-3 py-2 shadow-sm sm:h-20 sm:w-32"
+              className="group flex h-12 w-12 shrink-0 items-center justify-center sm:h-14 sm:w-14"
               title={partner.name}
             >
               <Image
                 src={`/partners/${partner.file}`}
                 alt={partner.name}
                 width={120}
-                height={60}
-                className="h-full w-full object-contain"
+                height={120}
+                className="partner-logo"
               />
             </div>
           ))}
