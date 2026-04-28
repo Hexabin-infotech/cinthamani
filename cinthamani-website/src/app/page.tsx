@@ -2,7 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import SolutionsSection from "@/components/home/SolutionsSection";
 import PartnersSection from "@/components/home/PartnersSection";
 import StatsSection from "@/components/home/StatsSection";
-import WhyChooseSection from "@/components/home/WhyChooseSection";
+import { WhyChooseAccordion } from "@/components/ui/interactive-image-accordion";
 import CTASection from "@/components/home/CTASection";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <SolutionsSection />
       <PartnersSection />
       <StatsSection />
-      <WhyChooseSection />
+      <WhyChooseAccordion />
       <CTASection />
     </>
   );
